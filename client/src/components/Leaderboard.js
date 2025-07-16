@@ -4,7 +4,7 @@ const Leaderboard = ({ refreshTrigger }) => {
   const [Point, setPoint] = useState([]);
 
 useEffect(() => {
-  fetch("http://localhost:5000/points")
+  fetch("https://memory-match-game-k5u3.onrender.com")
     .then(res => res.json())
     .then(data => setPoint(data))
     .catch(err => console.error("Failed to fetch points", err));
