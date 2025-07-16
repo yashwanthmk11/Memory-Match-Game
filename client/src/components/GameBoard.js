@@ -9,7 +9,7 @@ const matchSound = new Audio(process.env.PUBLIC_URL + "/sounds/match.mp3");
 const wrongSound = new Audio(process.env.PUBLIC_URL + "/sounds/wrong.mp3");
 const winSound = new Audio(process.env.PUBLIC_URL + "/sounds/win.mp3");
 
-const API_BASE = "http://localhost:5000"; // ✅ API base URL-
+const API_BASE = "https://memory-match-game-k5u3.onrender.com"; // ✅ API base URL-
 
 const cardValues = ['🍕', '🚀', '🐶', '🎮', '🌈', '🍩', '🎲', '🏀'];
 
