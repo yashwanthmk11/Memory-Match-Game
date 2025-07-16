@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  background: radial-gradient(circle at 10% 20%, #111827 0%, #1f2937 100%);
+  overflow: hidden;
+  color: #fff;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(-45deg, #00adb5, #007c87, #3f3d56, #1f1f1f);
+  background-size: 400% 400%;
+  animation: flow 15s ease infinite;
+  z-index: -2;
+  filter: blur(80px);
+  top: -50%;
+  left: -50%;
+  opacity: 0.4;
+}
+
+@keyframes flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

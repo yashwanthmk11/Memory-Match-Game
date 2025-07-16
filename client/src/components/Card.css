@@ -1,0 +1,23 @@
+.card {
+  width: 100%;
+  max-width: 80px;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  background: #292929;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card.matched {
+  background-color: #00ffc8;
+  color: #000;
+}
