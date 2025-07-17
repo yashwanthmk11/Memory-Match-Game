@@ -111,30 +111,32 @@ const GameBoard = () => {
   };
 
   return (
-    <div className="main-layout">
-      <div className="game-section">
-        <h1>🧠 Memory Match Game</h1>
-        <div className="info">
-          <p>Moves: {moves}</p>
-          <p>Time: {timer}s</p>
+    <div className="container">
+      <div className="main-layout">
+        <div className="game-section">
+          <h1>🧠 Memory Match Game</h1>
+          <div className="info">
+            <p>Moves: {moves}</p>
+            <p>Time: {timer}s</p>
+          </div>
+          <div className="grid">
+            {cards.map((card, i) => (
+              <Card
+                key={card.id}
+                card={card}
+                isFlipped={flippedCards.includes(i)}
+                isMatched={card.isMatched}
+                onClick={() => handleCardClick(i)}
+              />
+            ))}
+          </div>
+          {gameOver && <h2>🎉 You Won! Total Moves: {moves}</h2>}
+          <button onClick={handleRestart}>Restart Game</button>
         </div>
-        <div className="grid">
-          {cards.map((card, i) => (
-            <Card
-              key={card.id}
-              card={card}
-              isFlipped={flippedCards.includes(i)}
-              isMatched={card.isMatched}
-              onClick={() => handleCardClick(i)}
-            />
-          ))}
-        </div>
-        {gameOver && <h2>🎉 You Won! Total Moves: {moves}</h2>}
-        <button onClick={handleRestart}>Restart Game</button>
-      </div>
 
-      <div className="leaderboard-panel">
-        <Leaderboard refreshTrigger={refreshLeaderboard} />
+        <div className="leaderboard-panel">
+          <Leaderboard refreshTrigger={refreshLeaderboard} />
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import GameBoard from './components/GameBoard';
 import ParticlesBackground from './components/ParticlesBackground';
+import Footer from './components/Footer';
 import './styles.css';
 
 
@@ -12,7 +13,7 @@ function App() {
     <>
       <ParticlesBackground />
       <GameBoard />
-     
+      <Footer />
     </>
   );
 }

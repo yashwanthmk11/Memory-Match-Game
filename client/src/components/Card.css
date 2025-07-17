@@ -1,23 +1,50 @@
+/*
+  Modern memory card: rounded, shadow, smooth transitions, touch-friendly
+*/
 .card {
   width: 100%;
-  max-width: 80px;
+  max-width: 90px;
   aspect-ratio: 1/1;
-  border-radius: 12px;
-  background: #292929;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.2s ease;
+  transition: transform 0.25s cubic-bezier(.4,2,.6,1), background 0.3s, box-shadow 0.3s;
+  user-select: none;
+  outline: none;
+  border: none;
+  position: relative;
 }
 
-.card:hover {
-  transform: scale(1.05);
+.card:hover:not(:disabled), .card:focus-visible:not(:disabled) {
+  background: linear-gradient(120deg, #00ffc3 0%, #007c87 100%);
+  transform: scale(1.07) rotate(-2deg);
+  box-shadow: 0 4px 24px rgba(0,255,195,0.18);
+  color: #1a1a1a;
+}
+
+.card:active:not(:disabled) {
+  transform: scale(0.97);
 }
 
 .card.matched {
-  background-color: #00ffc8;
+  background: linear-gradient(120deg, #00ffc8 0%, #fff 100%);
   color: #000;
+  box-shadow: 0 2px 24px rgba(0,255,200,0.18);
+  cursor: default;
+}
+
+/*
+  Responsive card size for small screens
+*/
+@media (max-width: 600px) {
+  .card {
+    max-width: 60px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+  }
 }
